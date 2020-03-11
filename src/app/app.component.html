@@ -1,0 +1,11 @@
+<form [formGroup]="form">
+  <p>
+    <label>Pick or type Style</label>
+    <!-- PrimeNG Autocomplete https://www.primefaces.org/primeng/showcase/#/autocomplete -->
+    <p-autoComplete
+      field="Name"
+      [suggestions]="options"
+      (completeMethod)="complete($event)"
+    ></p-autoComplete>
+  </p>
+</form>
