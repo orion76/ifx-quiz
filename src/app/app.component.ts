@@ -114,7 +114,6 @@ export class AppComponent implements OnInit {
 
   public Submit(): void {
     this.eventSubmit.emit(true);
-    console.log('1111111');
     this.storage.create(this.inputStateSubject.getValue().value);
     this.clearForm();
   }
@@ -128,7 +127,6 @@ export class AppComponent implements OnInit {
       filter(Boolean),
       withLatestFrom(this.common.getSuggestions(), (state: string[], ids) => {
         const idsSet = new Set(ids.map((item) => item.name));
-
         return state.map((value) => {
           const type = idsSet.has(value) ? EInputState.ID : EInputState.NAME;
           return {type, value};
